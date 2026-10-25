@@ -1,103 +1,180 @@
 import Image from "next/image";
 
+// Os teus dados: preenche aqui e o site inteiro atualiza.
+const CONTACTO = {
+  telefone: "+351000000000", // ex.: +351912345678
+  telefoneVisivel: "[telemóvel]",
+  whatsapp: "351000000000", // só números, com 351 à frente
+  email: "[email profissional]",
+  cvPdf: "/cv-andre-lourenco.pdf", // põe o PDF na pasta public/
+};
+
+const NUMEROS = [
+  { valor: "[X]", texto: "viaturas fotografadas" },
+  { valor: "+[X]", texto: "seguidores em [N] semanas" },
+  { valor: "[X]", texto: "contactos gerados" },
+];
+
 export default function Home() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <main className="wrap">
+      <nav className="nav">
+        <span className="brand">André Lourenço</span>
+        <a href="#contacto">Contacto</a>
+      </nav>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
+      <div className="hero-img">
+        <Image
+          src="/fotos/ferrari-frente.jpg"
+          alt="Frente de um desportivo vermelho numa boxe de circuito"
+          fill
+          priority
+          sizes="(max-width: 1080px) 100vw, 1080px"
+          style={{ objectFit: "cover", objectPosition: "60% 40%" }}
+        />
+      </div>
+
+      <section className="hero">
+        <p className="kicker">Torres Vedras · Região Oeste</p>
+        <h1>Fotografia, vídeo e marketing para stands automóveis</h1>
+        <p className="lead">
+          Faço os carros em stock parecerem o que valem, e ponho-os à frente de
+          quem compra.
+        </p>
+        <div className="buttons">
+          <a className="btn btn-primary" href={`tel:${CONTACTO.telefone}`}>
+            Ligar
           </a>
           <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+            className="btn btn-outline"
+            href={`https://wa.me/${CONTACTO.whatsapp}`}
           >
-            Read our docs
+            WhatsApp
           </a>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
+      </section>
+
+      <section className="stats">
+        {NUMEROS.map((n) => (
+          <div key={n.texto}>
+            <span className="stat-num">{n.valor}</span>
+            <span className="stat-label">{n.texto}</span>
+          </div>
+        ))}
+      </section>
+
+      <section className="section">
+        <h2>Viaturas de stock</h2>
+        <p className="section-text">
+          Fotos para anúncio: interior, motor e detalhe, com luz natural e
+          enquadramento limpo.
+        </p>
+        <div className="grid-2 grid-3-desktop">
+          <div className="photo photo-tall">
+            <Image
+              src="/fotos/interior-bmw.jpg"
+              alt="Interior de berlina alemã, vista do banco traseiro"
+              fill
+              sizes="(max-width: 760px) 50vw, 360px"
+              style={{ objectFit: "cover" }}
+            />
+          </div>
+          <div className="photo photo-tall">
+            <Image
+              src="/fotos/motor-amg.jpg"
+              alt="Tampa de motor em carbono com placa de assinatura"
+              fill
+              sizes="(max-width: 760px) 50vw, 360px"
+              style={{ objectFit: "cover" }}
+            />
+          </div>
+          <div className="photo photo-tall span-mobile">
+            <Image
+              src="/fotos/mclaren-traseira.jpg"
+              alt="Traseira de desportivo preto e dourado"
+              fill
+              sizes="(max-width: 760px) 50vw, 360px"
+              style={{ objectFit: "cover", objectPosition: "55% 50%" }}
+            />
+          </div>
+        </div>
+      </section>
+
+      <section className="section">
+        <h2>Vídeos</h2>
+        <div className="grid-2 grid-3-desktop">
+          {/* Troca cada bloco por um vídeo do YouTube/Instagram quando os tiveres */}
+          <div className="video">Reel de viatura</div>
+          <div className="video">Reel de evento</div>
+        </div>
+      </section>
+
+      <section className="section">
+        <h2>Eventos e bastidores</h2>
+        <p className="section-text">
+          Acesso às boxes e paddock em provas no Autódromo do Estoril.
+        </p>
+        <div className="grid-2 grid-3-desktop">
+          <figure>
+            <div className="photo photo-event">
+              <Image
+                src="/fotos/hiperdesportivo-boxe.jpg"
+                alt="Hiperdesportivo verde numa boxe com a equipa ao fundo"
+                fill
+                sizes="(max-width: 760px) 50vw, 360px"
+                style={{ objectFit: "cover", objectPosition: "50% 60%" }}
+              />
+            </div>
+            <figcaption>[Evento · data]</figcaption>
+          </figure>
+          <figure>
+            <div className="photo photo-event">
+              <Image
+                src="/fotos/boxe-gt.jpg"
+                alt="Boxe de equipa GT com carro em reparação"
+                fill
+                sizes="(max-width: 760px) 50vw, 360px"
+                style={{ objectFit: "cover", objectPosition: "50% 35%" }}
+              />
+            </div>
+            <figcaption>[Equipa · prova]</figcaption>
+          </figure>
+          <figure className="span-mobile">
+            <div className="photo photo-event">
+              <Image
+                src="/fotos/volante-mclaren.jpg"
+                alt="Volante de superdesportivo visto do lugar do condutor"
+                fill
+                sizes="(max-width: 760px) 50vw, 360px"
+                style={{ objectFit: "cover", objectPosition: "50% 30%" }}
+              />
+            </div>
+            <figcaption>[Contexto: a convite de quem, em que evento]</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section id="contacto" className="contact">
+        <h2>Falamos?</h2>
+        <p className="section-text">
+          Fotografo-vos uma viatura sem custo para verem o resultado.
+        </p>
+        <a className="btn btn-primary" href={`tel:${CONTACTO.telefone}`}>
+          Ligar {CONTACTO.telefoneVisivel}
         </a>
         <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+          className="btn btn-outline"
+          href={`https://wa.me/${CONTACTO.whatsapp}`}
         >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
+          WhatsApp
         </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
+        <a className="contact-link" href={`mailto:${CONTACTO.email}`}>
+          {CONTACTO.email}
         </a>
-      </footer>
-    </div>
+        <a className="contact-link" href={CONTACTO.cvPdf}>
+          Descarregar CV em PDF
+        </a>
+      </section>
+    </main>
   );
 }
