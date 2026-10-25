@@ -1,0 +1,84 @@
+import fs from "node:fs";
+import path from "node:path";
+import { imageSize } from "image-size";
+
+/*
+  COMO ADICIONAR UMA SESSÃO NOVA
+  1. Cria uma pasta em public/fotos/<nome-da-sessao>/ e põe lá as fotos (.jpg, .jpeg, .png, .webp).
+  2. Acrescenta uma entrada na lista SESSOES abaixo, com o mesmo "slug" que o nome da pasta.
+  As fotos aparecem por ordem alfabética do nome do ficheiro; a "capa" aparece primeiro.
+*/
+
+export type SessaoInfo = {
+  slug: string; // nome da pasta em public/fotos/
+  titulo: string;
+  local: string;
+  data: string; // texto livre, ex.: "Setembro 2026"
+  descricao?: string;
+  capa: string; // nome do ficheiro da foto de capa
+};
+
+export const SESSOES: SessaoInfo[] = [
+  {
+    slug: "estoril-boxes",
+    titulo: "Boxes e paddock",
+    local: "Autódromo do Estoril",
+    data: "[mês e ano]",
+    descricao: "Bastidores de uma prova: equipas, carros de competição e superdesportivos nas boxes.",
+    capa: "ferrari-frente.jpg",
+  },
+  {
+    slug: "stock",
+    titulo: "Viaturas de stock",
+    local: "Região Oeste",
+    data: "2026",
+    descricao: "Fotos para anúncio: interiores, motores e detalhes.",
+    capa: "interior-bmw.jpg",
+  },
+];
+
+export type Foto = {
+  src: string;
+  width: number;
+  height: number;
+  alt: string;
+};
+
+export type Sessao = SessaoInfo & { fotos: Foto[]; capaFoto: Foto };
+
+const EXTENSOES = /\.(jpe?g|png|webp)$/i;
+
+function lerFotos(info: SessaoInfo): Foto[] {
+  const pasta = path.join(process.cwd(), "public", "fotos", info.slug);
+  if (!fs.existsSync(pasta)) return [];
+  const ficheiros = fs
+    .readdirSync(pasta)
+    .filter((f) => EXTENSOES.test(f))
+    .sort((a, b) => {
+      if (a === info.capa) return -1;
+      if (b === info.capa) return 1;
+      return a.localeCompare(b);
+    });
+  return ficheiros.map((f, i) => {
+    const { width = 1200, height = 900 } = imageSize(
+      fs.readFileSync(path.join(pasta, f)),
+    );
+    return {
+      src: `/fotos/${info.slug}/${f}`,
+      width,
+      height,
+      alt: `${info.titulo}, ${info.local}, foto ${i + 1}`,
+    };
+  });
+}
+
+export function getSessoes(): Sessao[] {
+  return SESSOES.map((info) => {
+    const fotos = lerFotos(info);
+    return { ...info, fotos, capaFoto: fotos[0] };
+  }).filter((s) => s.fotos.length > 0);
+}
+
+export function getSessao(slug: string): Sessao | undefined {
+  return getSessoes().find((s) => s.slug === slug);
+}

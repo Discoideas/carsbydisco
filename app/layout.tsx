@@ -1,14 +1,20 @@
 import type { Metadata, Viewport } from "next";
+import Nav from "@/components/Nav";
+import { CONTACTO } from "@/lib/contacto";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "André Lourenço — Fotografia, vídeo e marketing automóvel",
+  metadataBase: new URL("https://carsbydisco.com"),
+  title: {
+    default: `${CONTACTO.nome} — Fotografia automóvel`,
+    template: `%s — ${CONTACTO.nome}`,
+  },
   description:
-    "Fotografia, vídeo e marketing para stands automóveis. Torres Vedras, Região Oeste.",
+    "Portfólio de fotografia automóvel: eventos, provas e viaturas. Torres Vedras, Região Oeste.",
 };
 
 export const viewport: Viewport = {
-  themeColor: "#16181D",
+  themeColor: "#111214",
 };
 
 export default function RootLayout({
@@ -24,7 +30,14 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body>{children}</body>
+      <body>
+        <Nav />
+        {children}
+        <footer className="rodape">
+          <span>© {new Date().getFullYear()} {CONTACTO.nome}</span>
+          <span>{CONTACTO.zona}</span>
+        </footer>
+      </body>
     </html>
   );
 }
