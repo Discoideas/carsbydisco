@@ -1,18 +1,20 @@
 import type { Metadata } from "next";
-import CartaoSessao from "@/components/CartaoSessao";
+import BlocoSessao from "@/components/BlocoSessao";
 import { getSessoes } from "@/lib/sessoes";
 
-export const metadata: Metadata = { title: "Galeria" };
+export const metadata: Metadata = { title: "Trabalho" };
 
 export default function GaleriaPage() {
   const sessoes = getSessoes();
   return (
-    <main className="secao">
-      <h1 className="titulo-pagina">Galeria</h1>
-      <p className="subtitulo">Cada sessão é um evento ou um dia de fotografia.</p>
-      <div className="grelha-cartoes">
+    <main>
+      <section className="intro">
+        <p className="mono">Índice / {String(sessoes.length).padStart(2, "0")} sessões</p>
+        <h1 className="titulo-grande">Trabalho</h1>
+      </section>
+      <div className="lista-blocos">
         {sessoes.map((s, i) => (
-          <CartaoSessao key={s.slug} s={s} prioridade={i < 2} />
+          <BlocoSessao key={s.slug} s={s} invertido={i % 2 === 1} prioridade={i === 0} />
         ))}
       </div>
     </main>

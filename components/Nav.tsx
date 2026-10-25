@@ -8,10 +8,12 @@ export default function Nav() {
         {CONTACTO.nome}
       </Link>
       <nav className="nav-links" aria-label="Principal">
-        <Link href="/galeria">Galeria</Link>
+        <Link href="/galeria">Trabalho</Link>
         <Link href="/sobre">Sobre</Link>
-        <Link href="/contacto">Contacto</Link>
       </nav>
+      <Link href="/contacto" className="nav-cta">
+        Marcar sessão <span aria-hidden="true">→</span>
+      </Link>
     </header>
   );
 }

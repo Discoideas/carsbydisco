@@ -12,6 +12,7 @@ import { imageSize } from "image-size";
 export type SessaoInfo = {
   slug: string; // nome da pasta em public/fotos/
   titulo: string;
+  categoria: string; // ex.: "Motorsport", "Stock", "Detalhe"
   local: string;
   data: string; // texto livre, ex.: "Setembro 2026"
   descricao?: string;
@@ -21,7 +22,8 @@ export type SessaoInfo = {
 export const SESSOES: SessaoInfo[] = [
   {
     slug: "estoril-boxes",
-    titulo: "Boxes e paddock",
+    titulo: "Paddock",
+    categoria: "Motorsport",
     local: "Autódromo do Estoril",
     data: "[mês e ano]",
     descricao: "Bastidores de uma prova: equipas, carros de competição e superdesportivos nas boxes.",
@@ -29,7 +31,8 @@ export const SESSOES: SessaoInfo[] = [
   },
   {
     slug: "stock",
-    titulo: "Viaturas de stock",
+    titulo: "Stock",
+    categoria: "Viaturas",
     local: "Região Oeste",
     data: "2026",
     descricao: "Fotos para anúncio: interiores, motores e detalhes.",
@@ -44,7 +47,7 @@ export type Foto = {
   alt: string;
 };
 
-export type Sessao = SessaoInfo & { fotos: Foto[]; capaFoto: Foto };
+export type Sessao = SessaoInfo & { fotos: Foto[]; capaFoto: Foto; numero: string };
 
 const EXTENSOES = /\.(jpe?g|png|webp)$/i;
 
@@ -73,9 +76,9 @@ function lerFotos(info: SessaoInfo): Foto[] {
 }
 
 export function getSessoes(): Sessao[] {
-  return SESSOES.map((info) => {
+  return SESSOES.map((info, i) => {
     const fotos = lerFotos(info);
-    return { ...info, fotos, capaFoto: fotos[0] };
+    return { ...info, fotos, capaFoto: fotos[0], numero: String(i + 1).padStart(2, "0") };
   }).filter((s) => s.fotos.length > 0);
 }
 

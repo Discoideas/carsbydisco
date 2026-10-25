@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useCallback, useEffect, useState } from "react";
 import type { Foto } from "@/lib/sessoes";
 
-// Grelha de fotos em colunas; tocar numa foto abre-a em ecrã inteiro.
+// Fotos em composição desalinhada (grande / pequena); tocar abre em ecrã inteiro.
 export default function Galeria({ fotos }: { fotos: Foto[] }) {
   const [aberta, setAberta] = useState<number | null>(null);
 
@@ -34,23 +34,22 @@ export default function Galeria({ fotos }: { fotos: Foto[] }) {
 
   return (
     <>
-      <div className="masonry">
+      <div className="composicao">
         {fotos.map((f, i) => (
-          <button
-            key={f.src}
-            className="masonry-item"
-            onClick={() => setAberta(i)}
-            aria-label={`Abrir ${f.alt}`}
-          >
-            <Image
-              src={f.src}
-              alt={f.alt}
-              width={f.width}
-              height={f.height}
-              sizes="(max-width: 700px) 50vw, (max-width: 1100px) 33vw, 360px"
-              style={{ width: "100%", height: "auto", display: "block" }}
-            />
-          </button>
+          <figure key={f.src} className={`peca peca-${i % 4}${f.height > f.width ? " vertical" : ""}`}>
+            <button className="peca-btn" onClick={() => setAberta(i)} aria-label={`Abrir foto ${i + 1}`}>
+              <Image
+                src={f.src}
+                alt={f.alt}
+                width={f.width}
+                height={f.height}
+                sizes="(max-width: 800px) 100vw, 60vw"
+                quality={90}
+                style={{ width: "100%", height: "auto", display: "block" }}
+              />
+            </button>
+            <figcaption className="mono">{String(i + 1).padStart(2, "0")}</figcaption>
+          </figure>
         ))}
       </div>
 
@@ -63,6 +62,7 @@ export default function Galeria({ fotos }: { fotos: Foto[] }) {
             width={atual.width}
             height={atual.height}
             sizes="100vw"
+            quality={90}
             className="lb-img"
           />
           <button className="lb-btn lb-fechar" onClick={fechar} aria-label="Fechar">
@@ -78,8 +78,8 @@ export default function Galeria({ fotos }: { fotos: Foto[] }) {
               </button>
             </>
           )}
-          <p className="lb-contador">
-            {(aberta ?? 0) + 1} / {fotos.length}
+          <p className="lb-contador mono">
+            {String((aberta ?? 0) + 1).padStart(2, "0")} / {String(fotos.length).padStart(2, "0")}
           </p>
         </div>
       )}

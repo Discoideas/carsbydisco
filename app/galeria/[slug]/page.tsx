@@ -27,17 +27,41 @@ export default async function SessaoPage({
   const s = getSessao(slug);
   if (!s) notFound();
 
+  const todas = getSessoes();
+  const idx = todas.findIndex((x) => x.slug === s.slug);
+  const seguinte = todas[(idx + 1) % todas.length];
+
   return (
-    <main className="secao">
-      <Link href="/galeria" className="voltar">
-        ← Galeria
-      </Link>
-      <h1 className="titulo-pagina">{s.titulo}</h1>
-      <p className="subtitulo">
-        {s.local} · {s.data} · {s.fotos.length} fotos
-      </p>
-      {s.descricao && <p className="descricao">{s.descricao}</p>}
+    <main>
+      <section className="intro intro-sessao">
+        <Link href="/galeria" className="mono voltar">
+          ← Trabalho
+        </Link>
+        <h1 className="titulo-grande">
+          {s.titulo} / {s.numero}
+        </h1>
+        <div className="intro-meta">
+          <p className="mono">
+            {s.categoria} / {s.data}
+          </p>
+          {s.descricao && <p className="bloco-desc">{s.descricao}</p>}
+          <ul className="mono etiquetas">
+            <li>{s.local}</li>
+            <li>{s.fotos.length} fotos</li>
+          </ul>
+        </div>
+      </section>
+
       <Galeria fotos={s.fotos} />
+
+      {seguinte && seguinte.slug !== s.slug && (
+        <Link href={`/galeria/${seguinte.slug}`} className="proximo">
+          <span className="mono">Seguinte</span>
+          <span className="titulo-projeto">
+            {seguinte.titulo} / {seguinte.numero} →
+          </span>
+        </Link>
+      )}
     </main>
   );
 }

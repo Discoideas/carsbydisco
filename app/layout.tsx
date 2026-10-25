@@ -10,11 +10,11 @@ export const metadata: Metadata = {
     template: `%s — ${CONTACTO.nome}`,
   },
   description:
-    "Portfólio de fotografia automóvel: eventos, provas e viaturas. Torres Vedras, Região Oeste.",
+    "Portfólio de fotografia automóvel: provas, eventos e viaturas. Torres Vedras, Região Oeste.",
 };
 
 export const viewport: Viewport = {
-  themeColor: "#111214",
+  themeColor: "#F1F0EC",
 };
 
 export default function RootLayout({
@@ -26,16 +26,16 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
         <link
-          href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Barlow:wght@400;500;600&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap"
           rel="stylesheet"
         />
       </head>
       <body>
         <Nav />
         {children}
-        <footer className="rodape">
+        <footer className="rodape mono">
           <span>© {new Date().getFullYear()} {CONTACTO.nome}</span>
-          <span>{CONTACTO.zona}</span>
+          <span>carsbydisco.com</span>
         </footer>
       </body>
     </html>
