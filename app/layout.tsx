@@ -6,8 +6,8 @@ import "./globals.css";
 export const metadata: Metadata = {
   metadataBase: new URL("https://carsbydisco.com"),
   title: {
-    default: `${CONTACTO.nome} — Fotografia automóvel`,
-    template: `%s — ${CONTACTO.nome}`,
+    default: "carsbydisco — Fotografia automóvel",
+    template: "%s — carsbydisco",
   },
   description:
     "Portfólio de fotografia automóvel: provas, eventos e viaturas. Torres Vedras, Região Oeste.",
