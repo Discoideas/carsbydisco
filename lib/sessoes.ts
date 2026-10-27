@@ -46,8 +46,8 @@ export const SESSOES: SessaoInfo[] = [
     local: "Autódromo do Estoril",
     data: "Setembro 2026",
     descricao: "Fórmula 1, Grupo 5 e GT históricos nas boxes e na grelha.",
-    capa: "img_2744.jpg",
-    ordem: ["img_2980.jpg", "img_2981.jpg", "img_2982.jpg", "img_2984.jpg", "img_2985.jpg"],
+    capa: "img_2984.jpg",
+    ordem: ["img_2980.jpg", "img_2981.jpg", "img_2982.jpg", "img_2984.jpg", "img_2985.jpg", "img_2744.jpg"],
   },
 ];
 
