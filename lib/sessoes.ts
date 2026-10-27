@@ -38,6 +38,15 @@ export const SESSOES: SessaoInfo[] = [
     descricao: "Fotos para anúncio: interiores, motores e detalhes.",
     capa: "interior-bmw.jpg",
   },
+  {
+    slug: "estoril-classicos-2026-09",
+    titulo: "Estoril Classics",
+    categoria: "Motorsport clássico",
+    local: "Autódromo do Estoril",
+    data: "Setembro 2026",
+    descricao: "Fórmula 1, Grupo 5 e GT históricos nas boxes e na grelha.",
+    capa: "img_2744.jpg",
+  },
 ];
 
 export type Foto = {
