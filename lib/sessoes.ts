@@ -18,6 +18,7 @@ export type SessaoInfo = {
   descricao?: string;
   capa: string; // nome do ficheiro da foto de capa
   ordem?: string[]; // opcional: fotos que aparecem primeiro, por esta ordem
+  capaPosicao?: string; // opcional: zona da capa a mostrar, ex.: "50% 68%" (horizontal vertical)
 };
 
 export const SESSOES: SessaoInfo[] = [
@@ -46,7 +47,8 @@ export const SESSOES: SessaoInfo[] = [
     local: "Autódromo do Estoril",
     data: "Setembro 2026",
     descricao: "Fórmula 1, Grupo 5 e GT históricos nas boxes e na grelha.",
-    capa: "img_2984.jpg",
+    capa: "img_2775.jpg",
+    capaPosicao: "50% 68%",
     ordem: ["img_2980.jpg", "img_2981.jpg", "img_2982.jpg", "img_2984.jpg", "img_2985.jpg", "img_2744.jpg"],
   },
 ];

@@ -22,7 +22,7 @@ export default function BlocoSessao({
           priority={prioridade}
           sizes="(max-width: 800px) 100vw, 80vw"
           quality={90}
-          style={{ objectFit: "cover" }}
+          style={{ objectFit: "cover", objectPosition: s.capaPosicao ?? "50% 50%" }}
         />
       </Link>
       <div className="bloco-texto">
