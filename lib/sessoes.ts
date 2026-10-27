@@ -29,7 +29,9 @@ export const SESSOES: SessaoInfo[] = [
     local: "Autódromo do Estoril",
     data: "[mês e ano]",
     descricao: "Bastidores de uma prova: equipas, carros de competição e superdesportivos nas boxes.",
-    capa: "ferrari-frente.jpg",
+    capa: "img_1481.jpg",
+    capaPosicao: "50% 55%",
+    ordem: ["boxe-gt.jpg", "hiperdesportivo-boxe.jpg", "mclaren-traseira.jpg", "volante-mclaren.jpg"],
   },
   {
     slug: "stock",
