@@ -6,7 +6,7 @@ import { imageSize } from "image-size";
   COMO ADICIONAR UMA SESSÃO NOVA
   1. Cria uma pasta em public/fotos/<nome-da-sessao>/ e põe lá as fotos (.jpg, .jpeg, .png, .webp).
   2. Acrescenta uma entrada na lista SESSOES abaixo, com o mesmo "slug" que o nome da pasta.
-  As fotos aparecem por ordem alfabética do nome do ficheiro; a "capa" aparece primeiro.
+  As fotos aparecem por ordem alfabética do nome do ficheiro (ou pela lista "ordem").
 */
 
 export type SessaoInfo = {
@@ -29,8 +29,8 @@ export const SESSOES: SessaoInfo[] = [
     local: "Autódromo do Estoril",
     data: "[mês e ano]",
     descricao: "Bastidores de uma prova: equipas, carros de competição e superdesportivos nas boxes.",
-    capa: "img_1481.jpg",
-    capaPosicao: "50% 55%",
+    capa: "img_1495.jpg",
+    capaPosicao: "50% 42%",
     ordem: ["boxe-gt.jpg", "hiperdesportivo-boxe.jpg", "mclaren-traseira.jpg", "volante-mclaren.jpg"],
   },
   {
@@ -73,12 +73,10 @@ function lerFotos(info: SessaoInfo): Foto[] {
     .readdirSync(pasta)
     .filter((f) => EXTENSOES.test(f))
     .sort((a, b) => {
-      // 1.º as fotos de "ordem", 2.º a capa, depois o resto por nome
+      // 1.º as fotos de "ordem", depois o resto por nome (a capa não muda a ordem)
       const prio = (f: string) => {
         const i = info.ordem?.indexOf(f) ?? -1;
-        if (i >= 0) return i;
-        if (f === info.capa) return 1000;
-        return 2000;
+        return i >= 0 ? i : 1000;
       };
       return prio(a) - prio(b) || a.localeCompare(b);
     });
