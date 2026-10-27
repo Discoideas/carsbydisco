@@ -10,9 +10,9 @@ export default function Inicio() {
       <section className="intro">
         <p className="mono">Fotografia automóvel / {CONTACTO.zona}</p>
         <h1 className="titulo-grande">
-          Paddock,
+          A minha visão
           <br />
-          estrada e pista.
+          do automóvel.
         </h1>
       </section>
 
