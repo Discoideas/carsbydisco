@@ -61,7 +61,6 @@ export const SESSOES: SessaoInfo[] = [
       "img_1460.jpg",
       "mclaren-traseira.jpg",
       "img_1480.jpg",
-      "volante-mclaren.jpg",
     ],
   },
   {
