@@ -1,3 +1,5 @@
+import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import Nav from "@/components/Nav";
 import { CONTACTO } from "@/lib/contacto";
 import { T, type Lang } from "@/lib/i18n";
@@ -56,6 +58,8 @@ export default function Estrutura({ lang, children }: { lang: Lang; children: Re
             Instagram @{CONTACTO.instagram} →
           </a>
         </footer>
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
