@@ -8,7 +8,7 @@ export default function Inicio() {
   return (
     <main>
       <section className="intro">
-        <p className="mono">Fotografia automóvel / {CONTACTO.zona}</p>
+        <p className="mono">Fotografia automóvel amadora / {CONTACTO.zona}</p>
         <h1 className="titulo-grande">
           A minha visão
           <br />

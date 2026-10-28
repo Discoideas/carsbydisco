@@ -4,7 +4,7 @@ import { CONTACTO } from "@/lib/contacto";
 
 export const metadata: Metadata = {
   title: "Sobre",
-  description: "André “Disco” Lourenço, 21 anos, fotógrafo e criador de conteúdos do mundo automóvel e do desporto motorizado.",
+  description: "André Lourenço “Disco”, 21 anos, entusiasta e fotógrafo amador do mundo automóvel e do desporto motorizado.",
   alternates: { canonical: "/sobre" },
 };
 
@@ -43,7 +43,7 @@ export default function SobrePage() {
           </a>
         </p>
         <Link href="/contacto" className="botao">
-          Marcar sessão →
+          Falar comigo →
         </Link>
       </section>
     </main>

@@ -4,7 +4,7 @@ import { getSessoes } from "@/lib/sessoes";
 
 export const metadata: Metadata = {
   title: "Trabalho",
-  description: "Todas as sessões: Paddock, GTWC, GT Open, Estoril Classics, Winter Series e Porsche Sprint Challenge, no Estoril e em Portimão.",
+  description: "Fotos de um entusiasta e fotógrafo amador. Todas as sessões: Paddock, GTWC, GT Open, Estoril Classics, Winter Series e Porsche Sprint Challenge, no Estoril e em Portimão.",
   alternates: { canonical: "/galeria" },
 };
 

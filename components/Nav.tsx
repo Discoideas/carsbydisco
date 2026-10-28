@@ -14,7 +14,7 @@ export default function Nav() {
         <Link href="/sobre">Sobre</Link>
       </nav>
       <Link href="/contacto" className="nav-cta">
-        Marcar sessão <span aria-hidden="true">→</span>
+        Contacto <span aria-hidden="true">→</span>
       </Link>
     </header>
   );

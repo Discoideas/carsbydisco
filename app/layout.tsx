@@ -6,11 +6,11 @@ import "./globals.css";
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.carsbydisco.com"),
   title: {
-    default: "carsbydisco — Fotografia automóvel",
+    default: "carsbydisco — Fotografia automóvel amadora",
     template: "%s — carsbydisco",
   },
   description:
-    "Car’s by Disco: portfólio de fotografia automóvel de André Lourenço. Paddock, provas e trackdays no Autódromo do Estoril e em Portimão.",
+    "Car’s by Disco: as fotos de um entusiasta e fotógrafo amador, André Lourenço. Paddock, provas e trackdays no Autódromo do Estoril e em Portimão.",
   alternates: { canonical: "/" },
   openGraph: { siteName: "Car’s by Disco", locale: "pt_PT", type: "website" },
 };
@@ -33,7 +33,7 @@ const DADOS = {
       "@id": "https://www.carsbydisco.com/#autor",
       name: "André Lourenço",
       alternateName: "Disco",
-      jobTitle: "Fotógrafo automóvel",
+      jobTitle: "Entusiasta e fotógrafo amador do mundo automóvel",
       url: "https://www.carsbydisco.com/sobre",
       image: "https://www.carsbydisco.com/icon.png",
       email: `mailto:${CONTACTO.email}`,

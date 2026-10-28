@@ -3,7 +3,7 @@ import { CONTACTO } from "@/lib/contacto";
 
 export const metadata: Metadata = {
   title: "Contacto",
-  description: "Contacto para sessões de fotografia automóvel, eventos e provas: telefone, WhatsApp, email e Instagram @carsbydisco.",
+  description: "Contacto de André Lourenço “Disco”, entusiasta e fotógrafo amador: telefone, WhatsApp, email e Instagram @carsbydisco.",
   alternates: { canonical: "/contacto" },
 };
 
@@ -22,13 +22,13 @@ export default function ContactoPage() {
       <section className="intro">
         <p className="mono">Contacto / {CONTACTO.zona}</p>
         <h1 className="titulo-grande">
-          Marcar
+          Falar
           <br />
-          sessão.
+          comigo.
         </h1>
       </section>
       <section className="texto-pagina">
-        <p>Eventos, provas ou viaturas para venda. Respondo no próprio dia.</p>
+        <p>Sou um entusiasta e fotógrafo amador. Para falar sobre carros, eventos ou as minhas fotos, estes são os meus contactos.</p>
         <ul className="lista-contactos">
           {linhas.map((l) => (
             <li key={l.rotulo}>
