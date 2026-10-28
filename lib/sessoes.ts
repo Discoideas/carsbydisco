@@ -64,15 +64,16 @@ export const SESSOES: SessaoInfo[] = [
       "volante-mclaren.jpg",
     ],
   },
-  {
-    slug: "stock",
-    titulo: "Stock",
-    categoria: "Viaturas",
-    local: "Região Oeste",
-    data: "2026",
-    descricao: "Fotos para anúncio: interiores, motores e detalhes.",
-    capa: "interior-bmw.jpg",
-  },
+  // Stock: escondido por agora (fotos guardadas em public/fotos/stock). Para voltar a mostrar, tira as // destas linhas.
+  // {
+  //   slug: "stock",
+  //   titulo: "Stock",
+  //   categoria: "Viaturas",
+  //   local: "Região Oeste",
+  //   data: "2026",
+  //   descricao: "Fotos para anúncio: interiores, motores e detalhes.",
+  //   capa: "interior-bmw.jpg",
+  // },
   {
     slug: "estoril-classicos-2026-09",
     titulo: "Estoril Classics",
