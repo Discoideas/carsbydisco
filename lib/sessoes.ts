@@ -64,6 +64,15 @@ export const SESSOES: SessaoInfo[] = [
       "volante-mclaren.jpg",
     ],
   },
+  {
+    slug: "portimao-gtwc-2026",
+    titulo: "Paddock",
+    categoria: "Motorsport",
+    local: "Autódromo Internacional do Algarve, Portimão",
+    data: "Outubro 2026",
+    descricao: "Paddock GTWC 2026.",
+    capa: "dji_20261017180813_0177_d.jpg",
+  },
   // Stock: escondido por agora (fotos guardadas em public/fotos/stock). Para voltar a mostrar, tira as // destas linhas.
   // {
   //   slug: "stock",
