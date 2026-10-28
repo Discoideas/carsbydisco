@@ -140,6 +140,7 @@ export const SESSOES: SessaoInfo[] = [
   {
     slug: "estoril-classicos-2026-09",
     titulo: "Estoril Classics",
+    numero: "01",
     categoria: "Motorsport clássico",
     local: "Autódromo do Estoril",
     data: "Setembro 2026",
