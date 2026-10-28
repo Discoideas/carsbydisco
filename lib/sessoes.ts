@@ -71,7 +71,8 @@ export const SESSOES: SessaoInfo[] = [
     local: "Autódromo Internacional do Algarve, Portimão",
     data: "Outubro 2026",
     descricao: "Paddock GTWC 2026.",
-    capa: "dji_20261017180813_0177_d.jpg",
+    capa: "dji_20261018134323_0509_d.jpg",
+    capaPosicao: "50% 58%",
   },
   // Stock: escondido por agora (fotos guardadas em public/fotos/stock). Para voltar a mostrar, tira as // destas linhas.
   // {
