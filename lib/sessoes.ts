@@ -137,6 +137,38 @@ export const SESSOES: SessaoInfo[] = [
     capaPosicao: "50% 68%",
     ordem: ["img_2980.jpg", "img_2981.jpg", "img_2982.jpg", "img_2984.jpg", "img_2985.jpg", "img_2744.jpg"],
   },
+  {
+    slug: "estoril-winter-series-2026",
+    titulo: "Winter Series",
+    numero: "01",
+    categoria: "Motorsport",
+    local: "Autódromo do Estoril",
+    data: "Janeiro 2026",
+    descricao: "Fórmula 4 e GT à chuva, no pit lane e nas boxes.",
+    capa: "img_9916.jpg",
+    // ordem cronológica (hora de cada foto)
+    ordem: [
+      "img_9868.jpg",
+      "img_9870.jpg",
+      "img_9873.jpg",
+      "img_9881.jpg",
+      "img_9884.jpg",
+      "img_9885.jpg",
+      "img_9886.jpg",
+      "img_9887.jpg",
+      "img_9892.jpg",
+      "5a367521-1ed0-461a-b7a6-43a53d5a93a7.jpg",
+      "img_9907.jpg",
+      "img_9915.jpg",
+      "img_9916.jpg",
+      "img_9917.jpg",
+      "img_9918.jpg",
+      "img_9919.jpg",
+      "img_9921.jpg",
+      "img_9922.jpg",
+      "img_9930.jpg",
+    ],
+  },
 ];
 
 export type Foto = {
