@@ -145,7 +145,8 @@ export const SESSOES: SessaoInfo[] = [
     local: "Autódromo do Estoril",
     data: "Janeiro 2026",
     descricao: "Fórmula 4 e GT à chuva, no pit lane e nas boxes.",
-    capa: "img_9916.jpg",
+    capa: "img_9892.jpg",
+    capaPosicao: "50% 60%",
     // ordem cronológica (hora de cada foto)
     ordem: [
       "img_9868.jpg",
