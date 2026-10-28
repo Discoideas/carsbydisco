@@ -417,3 +417,28 @@ a {
     grid-column: 7 / 12;
   }
 }
+
+/* Jante a girar ao lado do nome */
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+.brand-jante {
+  width: 26px;
+  height: 26px;
+  animation: jante-gira 3s linear infinite;
+}
+.brand:hover .brand-jante {
+  animation-duration: 0.8s;
+}
+@keyframes jante-gira {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .brand-jante {
+    animation: none;
+  }
+}

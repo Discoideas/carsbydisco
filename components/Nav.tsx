@@ -5,6 +5,8 @@ export default function Nav() {
   return (
     <header className="nav">
       <Link href="/" className="brand">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src="/jante.png" alt="" aria-hidden="true" className="brand-jante" width={26} height={26} />
         {CONTACTO.nome}
       </Link>
       <nav className="nav-links" aria-label="Principal">
