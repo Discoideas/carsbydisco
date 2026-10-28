@@ -18,6 +18,7 @@ export type SessaoInfo = {
   descricao?: string;
   capa: string; // nome do ficheiro da foto de capa
   ordem?: string[]; // opcional: fotos que aparecem primeiro, por esta ordem
+  numero?: string; // opcional: número fixo no título (ex.: "01"); sem isto usa a posição na lista
   capaPosicao?: string; // opcional: zona da capa a mostrar, ex.: "50% 68%" (horizontal vertical)
 };
 
@@ -65,7 +66,8 @@ export const SESSOES: SessaoInfo[] = [
   },
   {
     slug: "portimao-gtwc-2026",
-    titulo: "Paddock",
+    titulo: "Paddock GTWC",
+    numero: "01",
     categoria: "Motorsport",
     local: "Autódromo Internacional do Algarve, Portimão",
     data: "Outubro 2026",
@@ -179,7 +181,7 @@ export function getSessoes(): Sessao[] {
   return SESSOES.map((info, i) => {
     const fotos = lerFotos(info);
     const capaFoto = fotos.find((f) => f.src.endsWith(`/${info.capa}`)) ?? fotos[0];
-    return { ...info, fotos, capaFoto, numero: String(i + 1).padStart(2, "0") };
+    return { ...info, fotos, capaFoto, numero: info.numero ?? String(i + 1).padStart(2, "0") };
   }).filter((s) => s.fotos.length > 0);
 }
 
