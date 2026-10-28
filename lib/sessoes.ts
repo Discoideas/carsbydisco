@@ -28,7 +28,7 @@ export const SESSOES: SessaoInfo[] = [
     categoria: "Motorsport",
     local: "Autódromo do Estoril",
     data: "2026",
-    descricao: "O meu ponto de vista, de alguns trackdays no circuito do Estoril.",
+    descricao: "O meu ponto de vista, de alguns trackdays no Autódromo do Estoril.",
     capa: "img_1495.jpg",
     capaPosicao: "50% 42%",
     // 6 escolhidas primeiro; depois por cor: vermelhos, verde, azul, brancos, cinzentos, pretos
