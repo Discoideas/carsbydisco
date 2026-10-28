@@ -15,7 +15,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { slug } = await params;
   const s = getSessao(slug);
-  return s ? { title: s.titulo, description: s.descricao } : {};
+  return s ? { title: `${s.titulo} / ${s.numero}`, description: s.descricao } : {};
 }
 
 export default async function SessaoPage({

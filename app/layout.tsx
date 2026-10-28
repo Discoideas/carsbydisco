@@ -4,7 +4,7 @@ import { CONTACTO } from "@/lib/contacto";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://carsbydisco.com"),
+  metadataBase: new URL("https://www.carsbydisco.com"),
   title: {
     default: "carsbydisco — Fotografia automóvel",
     template: "%s — carsbydisco",
