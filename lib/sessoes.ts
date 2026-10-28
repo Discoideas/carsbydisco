@@ -116,6 +116,17 @@ export const SESSOES: SessaoInfo[] = [
       "dji_20261017180037_0167_d.jpg",
     ],
   },
+  {
+    slug: "portimao-gt-open-2026",
+    titulo: "GT Open",
+    numero: "01",
+    categoria: "Motorsport",
+    local: "Autódromo Internacional do Algarve, Portimão",
+    data: "Abril 2026",
+    descricao: "GT Open 2026: paddock, pit lane e pista.",
+    capa: "img_0502.jpg",
+    capaPosicao: "50% 55%",
+  },
   // Stock: escondido por agora (fotos guardadas em public/fotos/stock). Para voltar a mostrar, tira as // destas linhas.
   // {
   //   slug: "stock",
