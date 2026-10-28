@@ -442,3 +442,20 @@ a {
     animation: none;
   }
 }
+
+/* Assinatura na página Sobre */
+.assinatura {
+  margin: 28px 0 32px;
+  padding-top: 20px;
+  border-top: 1px solid var(--line);
+  max-width: 560px;
+}
+.assinatura img {
+  display: block;
+  width: 220px;
+  height: auto;
+  margin-left: -8px;
+}
+.assinatura figcaption {
+  margin-top: 6px;
+}

@@ -27,6 +27,11 @@ export default function SobrePage() {
           fotógrafo/criador de conteúdos do mundo automóvel, de um entusiasta para
           entusiastas.
         </p>
+        <figure className="assinatura">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/assinatura.png" alt="Assinatura de André Lourenço" width={549} height={275} />
+          <figcaption className="mono">André “Disco” Lourenço</figcaption>
+        </figure>
         <p>
           <a
             href={`https://www.instagram.com/${CONTACTO.instagram}/`}
