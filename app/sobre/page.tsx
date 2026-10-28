@@ -10,17 +10,19 @@ export default function SobrePage() {
       <section className="intro">
         <p className="mono">Sobre / {CONTACTO.zona}</p>
         <h1 className="titulo-grande">
-          Cada linha
+          A minha visão
           <br />
-          conta.
+          do automóvel.
         </h1>
       </section>
       <section className="texto-pagina">
         <p>
-          Sou o {CONTACTO.nome}. Fotografo carros: provas e bastidores no Autódromo
-          do Estoril, e viaturas para venda, com atenção à luz, à forma e ao detalhe.
+          Sou o André Lourenço, tenho 21 anos, mais conhecido por “Disco”, amante do
+          mundo automóvel e do desporto motorizado, partilhando as minhas fotos
+          amadoras de forma a poder documentar a minha evolução enquanto
+          fotógrafo/criador de conteúdos do mundo automóvel, de um entusiasta para
+          entusiastas.
         </p>
-        <p>[Escreve aqui, por palavras tuas, porque fotografas carros e o que procuras.]</p>
         <Link href="/contacto" className="botao">
           Marcar sessão →
         </Link>
