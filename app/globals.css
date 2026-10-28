@@ -64,9 +64,9 @@ a {
 }
 
 .nav-links a {
-  font-size: 11px;
-  font-weight: 500;
-  letter-spacing: 0.1em;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   padding: 14px 0;
 }
@@ -502,5 +502,120 @@ a {
   }
   .nav-cta {
     padding: 0 10px;
+  }
+}
+
+/* Menu ☰ do telemóvel */
+.menu-botao {
+  display: none;
+  width: 44px;
+  height: 40px;
+  padding: 0;
+  border: 0;
+  background: var(--text);
+  color: var(--bg);
+  cursor: pointer;
+  position: relative;
+  z-index: 40;
+}
+.menu-icone {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 20px;
+  margin: 0 auto;
+}
+.menu-icone span {
+  display: block;
+  height: 2px;
+  background: currentColor;
+  transition: transform 0.25s ease, opacity 0.2s ease;
+}
+.menu-icone.x span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.menu-icone.x span:nth-child(2) {
+  opacity: 0;
+}
+.menu-icone.x span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+.menu-fundo {
+  position: fixed;
+  inset: 0;
+  z-index: 30;
+  background: rgba(19, 19, 19, 0.35);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+.menu-fundo.aberto {
+  opacity: 1;
+  pointer-events: auto;
+}
+.menu-lateral {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 35;
+  width: min(82vw, 340px);
+  padding: 84px 24px 32px;
+  background: var(--bg);
+  border-left: 1px solid var(--line);
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+}
+.menu-lateral.aberto {
+  transform: translateX(0);
+}
+.menu-fechar {
+  position: absolute;
+  top: 10px;
+  right: 16px;
+  width: 44px;
+  height: 40px;
+  border: 0;
+  background: var(--text);
+  color: var(--bg);
+  cursor: pointer;
+}
+.menu-lateral ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--line);
+}
+.menu-lateral li {
+  border-bottom: 1px solid var(--line);
+}
+.menu-lateral a {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  padding: 18px 0;
+  font-size: 30px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+}
+.menu-lateral a[aria-current="page"] {
+  text-decoration: underline;
+  text-underline-offset: 6px;
+}
+@media (max-width: 799px) {
+  .menu-botao {
+    display: block;
+  }
+  .nav-cta {
+    display: none;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .menu-lateral,
+  .menu-fundo,
+  .menu-icone span {
+    transition: none;
   }
 }
