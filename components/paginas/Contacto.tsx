@@ -1,16 +1,11 @@
-import type { Metadata } from "next";
 import { CONTACTO } from "@/lib/contacto";
+import { T, type Lang } from "@/lib/i18n";
 
-export const metadata: Metadata = {
-  title: "Contacto",
-  description: "Contacto de André Lourenço “Disco”, entusiasta e fotógrafo amador: telefone, WhatsApp, email e Instagram @carsbydisco.",
-  alternates: { canonical: "/contacto" },
-};
-
-export default function ContactoPage() {
+export default function Contacto({ lang }: { lang: Lang }) {
+  const t = T[lang];
   const linhas = [
-    { rotulo: "Telefone", texto: CONTACTO.telefoneVisivel, href: `tel:${CONTACTO.telefone}` },
-    { rotulo: "WhatsApp", texto: "Enviar mensagem", href: `https://wa.me/${CONTACTO.whatsapp}` },
+    { rotulo: t.contacto.telefone, texto: CONTACTO.telefoneVisivel, href: `tel:${CONTACTO.telefone}` },
+    { rotulo: "WhatsApp", texto: t.contacto.whatsapp, href: `https://wa.me/${CONTACTO.whatsapp}` },
     { rotulo: "Email", texto: CONTACTO.email, href: `mailto:${CONTACTO.email}` },
     ...(CONTACTO.instagram
       ? [{ rotulo: "Instagram", texto: `@${CONTACTO.instagram}`, href: `https://www.instagram.com/${CONTACTO.instagram}/` }]
@@ -20,15 +15,17 @@ export default function ContactoPage() {
   return (
     <main>
       <section className="intro">
-        <p className="mono">Contacto / {CONTACTO.zona}</p>
+        <p className="mono">
+          {t.contacto.titulo} / {t.zona}
+        </p>
         <h1 className="titulo-grande">
-          Falar
+          {t.contacto.h1[0]}
           <br />
-          comigo.
+          {t.contacto.h1[1]}
         </h1>
       </section>
       <section className="texto-pagina">
-        <p>Sou um entusiasta e fotógrafo amador. Para falar sobre carros, eventos ou as minhas fotos, estes são os meus contactos.</p>
+        <p>{t.contacto.texto}</p>
         <ul className="lista-contactos">
           {linhas.map((l) => (
             <li key={l.rotulo}>

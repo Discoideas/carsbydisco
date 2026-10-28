@@ -459,3 +459,48 @@ a {
 .assinatura figcaption {
   margin-top: 6px;
 }
+
+/* Seletor de língua PT / EN */
+.nav-direita {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  justify-self: end;
+}
+.lingua {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid var(--text);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+}
+.lingua a,
+.lingua span {
+  min-width: 34px;
+  min-height: 38px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 8px;
+}
+.lingua-ativa {
+  background: var(--text);
+  color: var(--bg);
+}
+.lingua a:hover {
+  background: var(--line);
+}
+@media (max-width: 420px) {
+  .nav-direita {
+    gap: 8px;
+  }
+  .lingua a,
+  .lingua span {
+    min-width: 30px;
+    padding: 0 6px;
+  }
+  .nav-cta {
+    padding: 0 10px;
+  }
+}

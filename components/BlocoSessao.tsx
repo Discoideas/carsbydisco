@@ -1,20 +1,25 @@
 import Image from "next/image";
 import Link from "next/link";
+import { T, caminho, type Lang } from "@/lib/i18n";
 import type { Sessao } from "@/lib/sessoes";
 
 // Um projeto na lista: foto grande, título "NOME / 01", metadados em mono.
 export default function BlocoSessao({
   s,
+  lang,
   invertido = false,
   prioridade = false,
 }: {
   s: Sessao;
+  lang: Lang;
   invertido?: boolean;
   prioridade?: boolean;
 }) {
+  const t = T[lang].sessao;
+  const href = caminho(lang, `/galeria/${s.slug}`);
   return (
     <article className={`bloco ${invertido ? "bloco-inv" : ""}`}>
-      <Link href={`/galeria/${s.slug}`} className="bloco-img" aria-label={`Abrir ${s.titulo}`}>
+      <Link href={href} className="bloco-img" aria-label={`${t.abrir} ${s.titulo}`}>
         <Image
           src={s.capaFoto.src}
           alt={s.capaFoto.alt}
@@ -28,7 +33,7 @@ export default function BlocoSessao({
       <div className="bloco-texto">
         <div>
           <h2 className="titulo-projeto">
-            <Link href={`/galeria/${s.slug}`}>
+            <Link href={href}>
               {s.titulo} / {s.numero}
             </Link>
           </h2>
@@ -40,7 +45,9 @@ export default function BlocoSessao({
         <ul className="mono etiquetas">
           <li>{s.categoria}</li>
           <li>{s.local}</li>
-          <li>{s.fotos.length} fotos</li>
+          <li>
+            {s.fotos.length} {t.fotos}
+          </li>
         </ul>
       </div>
     </article>

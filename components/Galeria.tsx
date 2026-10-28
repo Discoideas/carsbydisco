@@ -2,10 +2,12 @@
 
 import Image from "next/image";
 import { useCallback, useEffect, useState } from "react";
+import { T, type Lang } from "@/lib/i18n";
 import type { Foto } from "@/lib/sessoes";
 
 // Fotos em composição desalinhada (grande / pequena); tocar abre em ecrã inteiro.
-export default function Galeria({ fotos }: { fotos: Foto[] }) {
+export default function Galeria({ fotos, lang }: { fotos: Foto[]; lang: Lang }) {
+  const t = T[lang].galeria;
   const [aberta, setAberta] = useState<number | null>(null);
 
   const fechar = useCallback(() => setAberta(null), []);
@@ -37,7 +39,7 @@ export default function Galeria({ fotos }: { fotos: Foto[] }) {
       <div className="composicao">
         {fotos.map((f, i) => (
           <figure key={f.src} className={`peca peca-${i % 4}${f.height > f.width ? " vertical" : ""}`}>
-            <button className="peca-btn" onClick={() => setAberta(i)} aria-label={`Abrir foto ${i + 1}`}>
+            <button className="peca-btn" onClick={() => setAberta(i)} aria-label={`${t.abrir} ${i + 1}`}>
               <Image
                 src={f.src}
                 alt={f.alt}
@@ -55,7 +57,7 @@ export default function Galeria({ fotos }: { fotos: Foto[] }) {
 
       {atual && (
         <div className="lightbox" role="dialog" aria-modal="true" aria-label={atual.alt}>
-          <button className="lb-fundo" onClick={fechar} aria-label="Fechar" />
+          <button className="lb-fundo" onClick={fechar} aria-label={t.fechar} />
           <Image
             src={atual.src}
             alt={atual.alt}
@@ -65,15 +67,15 @@ export default function Galeria({ fotos }: { fotos: Foto[] }) {
             quality={90}
             className="lb-img"
           />
-          <button className="lb-btn lb-fechar" onClick={fechar} aria-label="Fechar">
+          <button className="lb-btn lb-fechar" onClick={fechar} aria-label={t.fechar}>
             ✕
           </button>
           {fotos.length > 1 && (
             <>
-              <button className="lb-btn lb-ant" onClick={() => mover(-1)} aria-label="Foto anterior">
+              <button className="lb-btn lb-ant" onClick={() => mover(-1)} aria-label={t.anterior}>
                 ‹
               </button>
-              <button className="lb-btn lb-seg" onClick={() => mover(1)} aria-label="Foto seguinte">
+              <button className="lb-btn lb-seg" onClick={() => mover(1)} aria-label={t.seguinte}>
                 ›
               </button>
             </>

@@ -6,6 +6,9 @@ const nextConfig: NextConfig = {
     qualities: [75, 90],
     formats: ["image/avif", "image/webp"],
   },
+  experimental: {
+    globalNotFound: true,
+  },
 };
 
 export default nextConfig;

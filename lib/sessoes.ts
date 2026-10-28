@@ -20,6 +20,8 @@ export type SessaoInfo = {
   ordem?: string[]; // opcional: fotos que aparecem primeiro, por esta ordem
   numero?: string; // opcional: número fixo no título (ex.: "01"); sem isto usa a posição na lista
   capaPosicao?: string; // opcional: zona da capa a mostrar, ex.: "50% 68%" (horizontal vertical)
+  // versão inglesa (o que faltar usa o português)
+  en?: { titulo?: string; categoria?: string; local?: string; data?: string; descricao?: string };
 };
 
 export const SESSOES: SessaoInfo[] = [
@@ -30,6 +32,7 @@ export const SESSOES: SessaoInfo[] = [
     local: "Autódromo do Estoril",
     data: "2026",
     descricao: "O meu ponto de vista, de alguns trackdays no Autódromo do Estoril.",
+    en: { local: "Estoril Circuit", descricao: "My point of view from a few trackdays at the Estoril Circuit." },
     capa: "img_1495.jpg",
     capaPosicao: "50% 42%",
     // 6 escolhidas primeiro; depois por cor: vermelhos, verde, azul, brancos, cinzentos, pretos
@@ -72,6 +75,7 @@ export const SESSOES: SessaoInfo[] = [
     local: "Autódromo Internacional do Algarve, Portimão",
     data: "Outubro 2026",
     descricao: "Paddock GTWC 2026.",
+    en: { local: "Algarve International Circuit, Portimão", data: "October 2026", descricao: "GTWC 2026 paddock." },
     capa: "dji_20261018134323_0509_d.jpg",
     capaPosicao: "50% 58%",
     ordem: [
@@ -124,6 +128,7 @@ export const SESSOES: SessaoInfo[] = [
     local: "Autódromo Internacional do Algarve, Portimão",
     data: "Outubro 2026",
     descricao: "McLaren Trophy Europe 2026, ronda de Portimão: boxes e paddock.",
+    en: { local: "Algarve International Circuit, Portimão", data: "October 2026", descricao: "McLaren Trophy Europe 2026, Portimão round: garages and paddock." },
     capa: "dji_20261018114615_0333_d.jpg",
     capaPosicao: "50% 55%",
     // 15,14,13,12,11; depois 3 fotos vindas do Paddock GTWC; depois o resto
@@ -156,6 +161,7 @@ export const SESSOES: SessaoInfo[] = [
     local: "Autódromo Internacional do Algarve, Portimão",
     data: "Abril 2026",
     descricao: "GT Open 2026: paddock, pit lane e pista.",
+    en: { local: "Algarve International Circuit, Portimão", data: "April 2026", descricao: "GT Open 2026: paddock, pit lane and track." },
     capa: "img_0703.jpg",
     capaPosicao: "50% 50%",
   },
@@ -177,6 +183,7 @@ export const SESSOES: SessaoInfo[] = [
     local: "Autódromo do Estoril",
     data: "Setembro 2026",
     descricao: "Fórmula 1, Grupo 5 e GT históricos nas boxes e na grelha.",
+    en: { categoria: "Classic motorsport", local: "Estoril Circuit", data: "September 2026", descricao: "Historic Formula 1, Group 5 and GT cars in the garages and on the grid." },
     capa: "img_2775.jpg",
     capaPosicao: "50% 68%",
     ordem: ["img_2980.jpg", "img_2981.jpg", "img_2982.jpg", "img_2984.jpg", "img_2985.jpg", "img_2744.jpg"],
@@ -189,6 +196,7 @@ export const SESSOES: SessaoInfo[] = [
     local: "Autódromo do Estoril",
     data: "Janeiro 2026",
     descricao: "Fórmula 4 e GT à chuva, no pit lane e nas boxes.",
+    en: { local: "Estoril Circuit", data: "January 2026", descricao: "Formula 4 and GT cars in the rain, in the pit lane and the garages." },
     capa: "img_9892.jpg",
     capaPosicao: "50% 60%",
     // ordem cronológica (hora de cada foto)
@@ -222,6 +230,7 @@ export const SESSOES: SessaoInfo[] = [
     local: "Autódromo do Estoril",
     data: "Maio 2026",
     descricao: "Porsche Sprint Challenge Ibérica 2026, ronda do Estoril.",
+    en: { local: "Estoril Circuit", data: "May 2026", descricao: "Porsche Sprint Challenge Ibérica 2026, Estoril round." },
     capa: "img_1027_2.jpg",
     capaPosicao: "50% 55%",
     ordem: [
@@ -253,6 +262,7 @@ export const SESSOES: SessaoInfo[] = [
     local: "Estoril e Portimão",
     data: "2026",
     descricao: "Algumas fotos extra.",
+    en: { local: "Estoril and Portimão", descricao: "A few extra photos." },
     capa: "img_3611.jpg",
     capaPosicao: "50% 60%",
     ordem: [
