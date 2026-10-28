@@ -10,7 +10,37 @@ export const metadata: Metadata = {
     template: "%s — carsbydisco",
   },
   description:
-    "Portfólio de fotografia automóvel: provas, eventos e viaturas. Torres Vedras, Região Oeste.",
+    "Car’s by Disco: portfólio de fotografia automóvel de André Lourenço. Paddock, provas e trackdays no Autódromo do Estoril e em Portimão.",
+  alternates: { canonical: "/" },
+  openGraph: { siteName: "Car’s by Disco", locale: "pt_PT", type: "website" },
+};
+
+// Dados estruturados: dizem ao Google quem é o autor, o nome do site e o logótipo
+const DADOS = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://www.carsbydisco.com/#site",
+      name: "Car’s by Disco",
+      alternateName: ["carsbydisco", "CarsByDisco"],
+      url: "https://www.carsbydisco.com/",
+      inLanguage: "pt-PT",
+      publisher: { "@id": "https://www.carsbydisco.com/#autor" },
+    },
+    {
+      "@type": "Person",
+      "@id": "https://www.carsbydisco.com/#autor",
+      name: "André Lourenço",
+      alternateName: "Disco",
+      jobTitle: "Fotógrafo automóvel",
+      url: "https://www.carsbydisco.com/sobre",
+      image: "https://www.carsbydisco.com/icon.png",
+      email: `mailto:${CONTACTO.email}`,
+      address: { "@type": "PostalAddress", addressLocality: "Torres Vedras", addressCountry: "PT" },
+      sameAs: [`https://www.instagram.com/${CONTACTO.instagram}/`],
+    },
+  ],
 };
 
 export const viewport: Viewport = {
@@ -31,6 +61,10 @@ export default function RootLayout({
         />
       </head>
       <body>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(DADOS) }}
+        />
         <Nav />
         {children}
         <footer className="rodape mono">

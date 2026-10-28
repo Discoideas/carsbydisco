@@ -1,7 +1,11 @@
 import type { Metadata } from "next";
 import { CONTACTO } from "@/lib/contacto";
 
-export const metadata: Metadata = { title: "Contacto" };
+export const metadata: Metadata = {
+  title: "Contacto",
+  description: "Contacto para sessões de fotografia automóvel, eventos e provas: telefone, WhatsApp, email e Instagram @carsbydisco.",
+  alternates: { canonical: "/contacto" },
+};
 
 export default function ContactoPage() {
   const linhas = [

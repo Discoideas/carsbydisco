@@ -2,7 +2,11 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { CONTACTO } from "@/lib/contacto";
 
-export const metadata: Metadata = { title: "Sobre" };
+export const metadata: Metadata = {
+  title: "Sobre",
+  description: "André “Disco” Lourenço, 21 anos, fotógrafo e criador de conteúdos do mundo automóvel e do desporto motorizado.",
+  alternates: { canonical: "/sobre" },
+};
 
 export default function SobrePage() {
   return (

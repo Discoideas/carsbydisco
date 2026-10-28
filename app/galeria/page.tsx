@@ -2,7 +2,11 @@ import type { Metadata } from "next";
 import BlocoSessao from "@/components/BlocoSessao";
 import { getSessoes } from "@/lib/sessoes";
 
-export const metadata: Metadata = { title: "Trabalho" };
+export const metadata: Metadata = {
+  title: "Trabalho",
+  description: "Todas as sessões: Paddock, GTWC, GT Open, Estoril Classics, Winter Series e Porsche Sprint Challenge, no Estoril e em Portimão.",
+  alternates: { canonical: "/galeria" },
+};
 
 export default function GaleriaPage() {
   const sessoes = getSessoes();
