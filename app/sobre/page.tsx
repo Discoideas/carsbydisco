@@ -30,7 +30,7 @@ export default function SobrePage() {
         <figure className="assinatura">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src="/assinatura.png" alt="Assinatura de André Lourenço" width={549} height={275} />
-          <figcaption className="mono">André “Disco” Lourenço</figcaption>
+          <figcaption className="mono">André Lourenço “Disco”</figcaption>
         </figure>
         <p>
           <a
