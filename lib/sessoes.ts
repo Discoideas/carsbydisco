@@ -117,6 +117,17 @@ export const SESSOES: SessaoInfo[] = [
     ],
   },
   {
+    slug: "portimao-mclaren-trophy-2026",
+    titulo: "McLaren Trophy",
+    numero: "01",
+    categoria: "Motorsport",
+    local: "Autódromo Internacional do Algarve, Portimão",
+    data: "Outubro 2026",
+    descricao: "McLaren Trophy Europe 2026, ronda de Portimão: boxes e paddock.",
+    capa: "dji_20261018114615_0333_d.jpg",
+    capaPosicao: "50% 55%",
+  },
+  {
     slug: "portimao-gt-open-2026",
     titulo: "GT Open",
     numero: "01",
