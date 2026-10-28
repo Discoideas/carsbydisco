@@ -5,6 +5,6 @@ export const CONTACTO = {
   telefoneVisivel: "[telemóvel]",
   whatsapp: "351000000000", // só números, com 351 à frente
   email: "[email]",
-  instagram: "", // ex.: "carsbydisco" (sem @); vazio = não aparece
+  instagram: "carsbydisco", // sem @; vazio = não aparece
   zona: "Torres Vedras · Região Oeste",
 };

@@ -9,7 +9,7 @@ export default function ContactoPage() {
     { rotulo: "WhatsApp", texto: "Enviar mensagem", href: `https://wa.me/${CONTACTO.whatsapp}` },
     { rotulo: "Email", texto: CONTACTO.email, href: `mailto:${CONTACTO.email}` },
     ...(CONTACTO.instagram
-      ? [{ rotulo: "Instagram", texto: `@${CONTACTO.instagram}`, href: `https://instagram.com/${CONTACTO.instagram}` }]
+      ? [{ rotulo: "Instagram", texto: `@${CONTACTO.instagram}`, href: `https://www.instagram.com/${CONTACTO.instagram}/` }]
       : []),
   ];
 

@@ -35,7 +35,9 @@ export default function RootLayout({
         {children}
         <footer className="rodape mono">
           <span>© {new Date().getFullYear()} {CONTACTO.nome}</span>
-          <span>carsbydisco.com</span>
+          <a href={`https://www.instagram.com/${CONTACTO.instagram}/`} target="_blank" rel="noopener noreferrer">
+            Instagram @{CONTACTO.instagram} →
+          </a>
         </footer>
       </body>
     </html>

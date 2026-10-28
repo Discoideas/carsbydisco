@@ -23,6 +23,16 @@ export default function SobrePage() {
           fotógrafo/criador de conteúdos do mundo automóvel, de um entusiasta para
           entusiastas.
         </p>
+        <p>
+          <a
+            href={`https://www.instagram.com/${CONTACTO.instagram}/`}
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ textDecoration: "underline", textUnderlineOffset: "4px" }}
+          >
+            Instagram @{CONTACTO.instagram} →
+          </a>
+        </p>
         <Link href="/contacto" className="botao">
           Marcar sessão →
         </Link>
